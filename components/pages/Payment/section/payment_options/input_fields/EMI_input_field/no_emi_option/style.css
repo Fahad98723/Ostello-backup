@@ -1,0 +1,22 @@
+@import '../../../../../App.css';
+
+p {
+  color: var(--color-twelve);
+}
+
+.exclaimation {
+  background-color: rgba(125, 35, 224, 0.14);
+  color: var(--color-five);
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+}
+
+.btn {
+  color: var(--color-13);
+  background-color: white;
+  border: 1px solid var(--color-13);
+}
+.btn:hover {
+  color: var(--color-13);
+}

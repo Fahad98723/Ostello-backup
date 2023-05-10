@@ -1,0 +1,8 @@
+@import './../../../../App.css';
+
+.input-bg {
+  background-color: var(--color-two);
+}
+.payment-card > input {
+  border-radius: 10px;
+}

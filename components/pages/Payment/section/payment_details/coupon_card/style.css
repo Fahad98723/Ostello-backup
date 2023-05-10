@@ -1,0 +1,7 @@
+@import '../../../App.css';
+
+.coupon {
+    background-color: var(--color-nine);
+    color: var(--color-five);
+    border:none;
+}

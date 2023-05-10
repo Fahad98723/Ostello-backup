@@ -1,0 +1,50 @@
+:root {
+    --color-one: #414141;
+    --color-two: #F4F4F4;
+    --color-three: #BDBDBD;
+    --color-four: #FAFAFB;
+    --color-five: #7D23E0;
+    --color-six: #5C5C5C;
+    --color-seven: #FFFAEE;
+    --color-eight: #3AC817;
+    --color-nine: #EFE5FB;
+    --color-ten: #A8A8A8;
+    --color-eleven: #E46060;
+    --color-twelve: #959595;
+    --color-13: #34BC6A;
+    --color-14: #878787;
+    --color-15: #9F9F9F;
+    --color-16:  #DBDBDB;
+    --color-17:#787878
+}
+
+.font-color-one {
+    color: var(--color-one);
+}
+.font-color-two {
+    color: var(--color-five)
+}
+.bg-color-one {
+    background-color: var(--color-five);
+}
+.shadow {
+    box-shadow: 0px 4px 20px rgba(122, 129, 220, 0.2);
+}
+.shadow-2 {
+    box-shadow: 0px 8px 60px rgba(122, 129, 220, 0.15);
+}
+.radius {
+    border-radius: 12px;
+}
+.border1 {
+    border: 1px solid #414141
+}
+::placeholder {
+    color: var(--color-three);
+}
+
+@media screen and (max-width:768px) {
+    ::placeholder {
+        font-size:14px;
+    }
+}

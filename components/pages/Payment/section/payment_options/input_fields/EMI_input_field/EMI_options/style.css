@@ -1,0 +1,28 @@
+@import '../../../../../App.css';
+
+.per {
+  color: var(--color-14);
+}
+
+.next {
+  background-color: var(--color-13);
+  border-radius: 8px;
+}
+
+.next:hover {
+  color: #fff;
+}
+
+.regular {
+  color: var(--color-ten);
+}
+.divider {
+  width: 100%;
+  background-color: var(--color-16);
+  height: 1px;
+  margin: 5px 0;
+}
+
+.border-green {
+  border: 1px solid #34bc6a;
+}

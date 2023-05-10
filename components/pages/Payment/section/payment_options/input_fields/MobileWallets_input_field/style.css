@@ -1,0 +1,6 @@
+@import '../../../../App.css';
+
+.select {
+    border: 1px solid #C2C2C2;
+    color: var(--color-17);
+}

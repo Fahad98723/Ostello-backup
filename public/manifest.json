@@ -1,0 +1,10 @@
+{
+  "short_name": "Ostello India",
+  "name": "React App SDK for Ostello India",
+  "icons": [],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff",
+  "content_security_policy": "default-src 'self' style-src 'self' 'unsafe-inline';"
+}

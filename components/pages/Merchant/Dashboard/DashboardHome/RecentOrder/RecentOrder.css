@@ -1,0 +1,5 @@
+@media (min-width: 300px) and (max-width: 991px) {
+    .name, .price{
+        font-size :16px;
+    }
+  }

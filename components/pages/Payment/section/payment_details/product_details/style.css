@@ -1,0 +1,16 @@
+@import '../../../App.css';
+
+
+.XYz {
+    border-radius:12px;
+    box-shadow: 0px 4px 20px rgba(122, 129, 220, 0.2);
+}
+
+.XYZ-title {
+    color :var(--color-six);
+}
+
+.XYZ-duration {
+    font-weight:400;
+    font-size:14px
+}

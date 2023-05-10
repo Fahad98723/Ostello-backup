@@ -1,0 +1,14 @@
+@import '../../../App.css';
+
+.discount {
+    color: var(--color-eleven) !important;
+
+}
+
+.regular {
+    color: var(--color-ten);
+}
+
+.stroke {
+    stroke: red;
+}

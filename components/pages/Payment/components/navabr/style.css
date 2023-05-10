@@ -1,0 +1,11 @@
+@import '../../App.css';
+
+.nav-bg {
+  background-color: var(--color-four);
+}
+.nav-btn {
+  border: 1px solid var(--color-five) !important;
+}
+.nav-btn:hover {
+  background-color: var(--color-five);
+}
