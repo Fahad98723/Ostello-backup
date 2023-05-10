@@ -14,9 +14,8 @@ export default function TwoRowCard() {
     >
       <div className="h-full w-full lg:block hidden">
         <Image
-          width={380}
-          height={380}
-          layout="intrinsic"
+          width={300}
+          height={300}
           src={coachingImage.src}
           className="h-full w-full rounded-xl  cursor-pointer"
           alt=""
@@ -25,9 +24,8 @@ export default function TwoRowCard() {
 
       <div className="lg:hidden block h-full w-full rounded-xl">
         <Image
-          width={380}
-          height={380}
-          layout="intrinsic"
+          width={200}
+          height={200}
           src={coachingImageMobile.src}
           className="h-full w-full rounded-xl  cursor-pointer"
           alt=""
