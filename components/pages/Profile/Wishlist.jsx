@@ -10,7 +10,6 @@ import { HeartFilled, HeartOutlined, StarFilled } from "@ant-design/icons";
 import { BsArrowRightCircle } from "react-icons/bs";
 import { useRouter } from "next/router";
 import { titleToUrl } from "../../utils";
-import CopyToClipboard from "react-copy-to-clipboard";
 import { authSelector, getUser } from "../../../redux/slices/authSlice";
 import axios from "axios";
 import { ACCESS_TOKEN, host, OWNER_ID } from "../../../utils/constant";
@@ -380,9 +379,7 @@ export const CourseCard = ({ singleCourse, users, setRefetch }) => {
         </Link>
 
         <div
-          onClick={() => {
-            CopyToClipboard("WELCOME50");
-          }}
+          
           className=" bg-primary px-4 py-1 text-white cursor-pointer"
         >
           {coupon}
