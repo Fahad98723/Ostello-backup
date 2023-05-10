@@ -765,21 +765,11 @@ const EditPost = () => {
                   </div>
                 )}
 
-                {/* <JoditEditor
-              ref={editor}
-              value={""}
-              config={config}
-              tabIndex={2}
-              //   onBlur={(newContent) => getValue(newContent)}
-
-              onChange={(newContent) => getValue(newContent)}
-            /> */}
-
                 <SunEditor
                   onChange={(content) => {
                     getValue(content);
 
-                    // 
+                    //
                     //   content
                     // );
                   }}

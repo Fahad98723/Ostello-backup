@@ -570,14 +570,7 @@ export default function WhatsAppMarketing() {
                   }}
                 />
 
-                {/* <JoditEditor
-      ref={editor}
-      value={""}
-      config={config}
-      tabIndex={2}
-      //   onBlur={(newContent) => getValue(newContent)}
-      onChange={(newContent) => getValue(newContent)}
-    /> */}
+              
               </div>
               <div className='bg-primary w-28 my-3 py-2 rounded-lg '>
                 <button

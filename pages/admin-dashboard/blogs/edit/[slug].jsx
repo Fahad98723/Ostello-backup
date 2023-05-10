@@ -447,15 +447,7 @@ const EditBlog = () => {
               )}
             </div>
 
-            {/* <JoditEditor
-              ref={editor}
-              value={desc}
-              config={config}
-              tabIndex={2}
-              //   onBlur={(newContent) => getValue(newContent)}
-
-              onChange={(newContent) => getValue(newContent)}
-            /> */}
+           
 
             <SunEditor
               onChange={(content) => {

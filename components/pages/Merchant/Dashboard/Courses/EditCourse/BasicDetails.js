@@ -758,16 +758,7 @@ export const BasicDetails = ({
               : "border-[#A4A4A4] my-5 "
           } first-letter:transition ease-in-out m-0`}
         >
-          {/* <textarea
-            type='text'
-            className='text-slate text-lg px-3 bg-transparent  placeholder-ghost w-full focus:outline-none'
-            rows='6'
-            cols='50'
-            placeholder='Course description *'
-            defaultValue={courseDescription}
-            key={courseDescription}
-            onBlur={(e) => setCourseDescription(e.target.value)}
-          /> */}
+        
           <JoditEditor
             className="text-slate text-lg px-3 bg-transparent  placeholder-ghost focus:outline-none"
             ref={editor}

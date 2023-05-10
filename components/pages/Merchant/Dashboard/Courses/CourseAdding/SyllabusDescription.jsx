@@ -13,10 +13,7 @@ import {
   authSelector,
   getUser,
 } from "../../../../../../redux/slices/authSlice";
-import {
-  isJsonParsable,
-  FileUploader,
-} from "../../../../../../utils/utils";
+import { isJsonParsable, FileUploader } from "../../../../../../utils/utils";
 import { Menu, MenuItem, TextField } from "@mui/material";
 import Box from "@mui/material/Box";
 import { FaSortAmountUp } from "react-icons/fa";
@@ -131,7 +128,7 @@ const SyllabusDescription = ({
       setSyllabus(courseData?.syllabus);
       if (syllabus) {
         let data = JSON.parse(syllabus);
-        
+
         // setAddBoxes(data)
       }
     }
@@ -178,25 +175,22 @@ const SyllabusDescription = ({
   };
 
   const handleUnitDescInputChange = (e, index) => {
-    
     if (e?.target) {
       const { name, value } = e.target;
-      
+
       const old = addUnitDesc[index];
       const updated = { ...old, [name]: value };
-      
+
       var list = [...addUnitDesc];
       list[index] = updated;
       setAddUnitDesc(list);
-      
     } else {
       const old = addUnitDesc[index];
       const updated = { ...old, description: e };
-      
+
       var list = [...addUnitDesc];
       list[index] = updated;
       setAddUnitDesc(list);
-      
     }
   };
 
@@ -206,8 +200,6 @@ const SyllabusDescription = ({
     let hoursValue = hours;
     let semesterValue = semester;
     let unitDescValue = addUnitDesc;
-
-    
 
     if (lectureValue === "") {
       setLecturesError("Lecture is required");
@@ -255,7 +247,7 @@ const SyllabusDescription = ({
       });
       dispatch(addSyllabusDescription(newDesc));
       // setProceed4(true)
-      
+
       handleClose();
     }
   };
@@ -271,7 +263,7 @@ const SyllabusDescription = ({
   const handleByType = () => {
     // const sortedType = adminInstitutes?.map(obj => { return { ...obj} }).sort((a, b) => a.classmode - b.classmode)
 
-    // 
+    //
     setData(sortedType);
     handleClose();
   };
@@ -298,31 +290,24 @@ const SyllabusDescription = ({
     setNewDescription(addBoxes?.find((t) => t.semester === clickTitle));
   };
 
-  
-
   useEffect(() => {
     setAddUnitDesc(newDescription?.unitDesc);
   }, [newDescription]);
 
   const handleInputChange = (e, editTitle) => {
-    
     const { name, value } = e.target;
     const old = addBoxes?.find((t) => t.semester === editTitle);
     const updated = { ...old, [name]: value, unitDesc: addUnitDesc };
-    
+
     var list = [...addBoxes];
     //Find index of specific object using findIndex method.
     const index = addBoxes.findIndex((obj) => obj.semester == editTitle);
     list[index] = updated;
     setAddBoxes(list);
     addInputs;
-    
+
     dispatch(addSyllabusDescription(list));
   };
-
-  
-
-  
 
   const handleUnitEditInputChange = (e, editTitle) => {
     const { name, value } = e.target;
@@ -590,7 +575,6 @@ const SyllabusDescription = ({
           setIsCoursePrice(true);
           setIsSyllabus(false);
           dispatch(addSyllabusDescription(addBoxes));
-          
         }}
       >
         <button className="text-white ml-auto bg-primary w-44 py-3 rounded-lg ">
@@ -747,7 +731,8 @@ export const AddDescription = ({
 
               {/* <SunEditor
                 onBlur={(newContent, data) =>
-                  handleUnitDescInputChange(data, index)
+                  // handleUnitDescInputChange(data, index)
+                  console.log(newContent.target.innerHtml)
                 }
                 setContents={inputs?.description}
                 placeholder="Meta Content"
@@ -849,8 +834,6 @@ export const EditDescription = ({
   deleteInputs,
 }) => {
   const { lectures, hours, semester, unitDesc } = newDescription;
-
-  
 
   const editor = useRef(null);
 
@@ -995,11 +978,11 @@ export const EditDescription = ({
                   handleUnitDescInputChange(newContent, index)
                 }
               />
-              {/* <SunEditor
-                onBlur={(newContent, data) =>
-                 { handleUnitDescInputChange(data, index)
-                  
-                }
+              <SunEditor
+                onBlur={(newContent, data) => {
+                  // handleUnitDescInputChange(data, index);
+                  console.log(newContent);
+                }}
                 setContents={inputs?.description}
                 placeholder="Meta Content"
                 setOptions={{
@@ -1031,7 +1014,7 @@ export const EditDescription = ({
                   showPathLabel: false,
                   // font: sortedFontOptions,
                 }}
-              /> */}
+              />
             </div>
           </div>
         ))}
