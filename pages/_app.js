@@ -11,7 +11,6 @@ import { wrapper } from "../redux/store";
 import { useStore } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
 import "../styles/globals.css";
-import { HydrationProvider, Server, Client } from "react-hydration-provider";
 import { Suspense } from "react";
 
 const gtag = dynamic(
