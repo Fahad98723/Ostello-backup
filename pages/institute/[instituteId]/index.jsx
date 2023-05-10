@@ -16,7 +16,6 @@ import { host } from "../../../utils/constant";
 import { isEmpty } from "../../../utils/utils";
 import MetaHelmet from "../../../components/MetaHelmet";
 
-
 const LoadingSpinner = dynamic(
   () => {
     return import("../../../components/layout/LoadingSpinner");
@@ -105,7 +104,9 @@ const Courses = dynamic(
 
 const OstelloInstituteExplore = dynamic(
   () => {
-    return import("../../../components/pages/HomeLanding/OstelloExplore/OstelloInstitueExplore");
+    return import(
+      "../../../components/pages/HomeLanding/OstelloExplore/OstelloInstitueExplore"
+    );
   },
   { ssr: false }
 );
@@ -118,7 +119,6 @@ const OstelloSubscribe = dynamic(
 );
 
 const NewInstitutePage = ({ currentInstitute, notFound, ip, review }) => {
-  
   const {
     metatitle,
     metadesc,
@@ -133,10 +133,9 @@ const NewInstitutePage = ({ currentInstitute, notFound, ip, review }) => {
   const router = useRouter();
   const { userData, isAuthenticated } = useSelector(authSelector);
   const { userLocation } = useSelector(selectUserAnalytics);
-  
+
   let t0 = moment().format();
   const url = router.pathname;
-  
 
   useEffect(() => {
     navigator.geolocation &&
@@ -159,7 +158,7 @@ const NewInstitutePage = ({ currentInstitute, notFound, ip, review }) => {
       if (isAuthenticated) {
         var t1 = moment().format();
         const timeSpent = moment(t1).diff(t0, "seconds");
-        
+
         const data = {
           activity_type: "visit_time",
           payload: {
@@ -182,7 +181,7 @@ const NewInstitutePage = ({ currentInstitute, notFound, ip, review }) => {
         } else {
           data.location = null;
         }
-        
+
         dispatch(postUserAnalytics(data));
       }
     };
@@ -198,7 +197,6 @@ const NewInstitutePage = ({ currentInstitute, notFound, ip, review }) => {
 
   const [currentInstituteCourse, setCurrentInstituteCourse] = useState([]);
 
-
   useEffect(() => {
     const run = async () => {
       if (currentInstitute?.id) {
@@ -207,7 +205,6 @@ const NewInstitutePage = ({ currentInstitute, notFound, ip, review }) => {
             `${host}/course?instituteId=${currentInstitute?.id}&limit=50`
           );
           setCurrentInstituteCourse(res?.data?.message);
-          
         } catch (err) {
           toast.error(err.message);
         }
@@ -217,8 +214,6 @@ const NewInstitutePage = ({ currentInstitute, notFound, ip, review }) => {
   }, [currentInstitute?.id]);
 
   const [instituteFaculty, setInstituteFaculty] = useState([]);
-
-  
 
   useEffect(() => {
     if (currentInstitute?.id) {
@@ -277,26 +272,26 @@ const NewInstitutePage = ({ currentInstitute, notFound, ip, review }) => {
             {currentInstitute?.name === "Aryabhatta Classes" ||
             !currentInstitute?.images?.length ||
             !currentInstitute?.videos.length ? (
-              <>
+              <div className="flex items-center">
                 <p className="text-white">Preparation For CUET + Boards</p>
                 <p
                   onClick={() => {
                     router.push(`/entrance-exam/${currentInstitute?.id}`);
                   }}
-                  className={`text-[16px] mx-3 border-2 border-white text-white p-2`}
+                  className={`text-[16px] mx-3 border-l-2 border-r-2 cursor-pointer border-white text-white p-2`}
                 >
                   Enroll Now
                 </p>
-              </>
+              </div>
             ) : (
-              <div>
+              <div className="text-white">
                 {currentInstitute?.name === "Solution - An Education Point" ? (
                   <p>
                     Separate Batches for Applied Maths start from
                     this session 2023
                   </p>
                 ) : (
-                  <a>{metadesc}</a>
+                  <p>{metadesc}</p>
                 )}
               </div>
             )}
@@ -361,21 +356,18 @@ export default NewInstitutePage;
 
 export async function getServerSideProps({ params, req, res }) {
   res.setHeader(
-    'Cache-Control',
-    'public, s-maxage=10, stale-while-revalidate=59'
-  )
+    "Cache-Control",
+    "public, s-maxage=10, stale-while-revalidate=59"
+  );
   let currentInstitute;
-  
+
   if (params.instituteId) {
     try {
       const data = await axios.get(
         `${host}/institute?slug=${params.instituteId}`
       );
       currentInstitute = data?.data?.message;
-      
-    } catch (err) {
-      
-    }
+    } catch (err) {}
   }
   let ip;
 
@@ -394,9 +386,7 @@ export async function getServerSideProps({ params, req, res }) {
       `${host}/review?instituteId=${params.instituteId}&nolimit=true`
     );
     reviews = res?.data?.message;
-  } catch (err) {
-    
-  }
+  } catch (err) {}
 
   if (reviews?.length) {
     await Promise.all(
@@ -436,12 +426,10 @@ export async function getServerSideProps({ params, req, res }) {
           reviewDetails.publisher.url = `https://www.ostello.co.in/institute/${data.message.institute.slug}`;
           review.push(reviewDetails);
         }
-
-        
       })
     );
   }
-  
+
   if (!currentInstitute) {
     return {
       props: {

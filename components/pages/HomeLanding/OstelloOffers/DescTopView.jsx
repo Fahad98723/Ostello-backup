@@ -35,7 +35,7 @@ const DescTopView = () => {
     <div className="hidden  lg:block  text-white  ">
       <div className="flex">
         <TwoRowCard />
-        <div className="flex flex-col ml-5  space-y-10">
+        <div className="flex flex-col ml-5  space-y-5">
           <div className="grid grid-cols-2 justify-between   ">
             <InstituteDisplay />
             <ListingCard />

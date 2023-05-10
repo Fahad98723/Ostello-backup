@@ -1,30 +1,33 @@
 /** @type {import('next').NextConfig} */
+const path = require("path");
+const withPurgeCSSModules = require("next-purge-css-modules");
 const nextConfig = {
+  swcMinify: true,
   compress: true,
   eslint: {
-    // Warning: This allows production builds to successfully complete even if
-    // your project has ESLint errors.
     ignoreDuringBuilds: true,
   },
-
+  // purgeCSSModules: {
+  //   content: path.join(__dirname, "src/**/*.{js,jsx,ts,tsx}"),
+  //   enableDevPurge: true,
+  //   safelist: ["body", "html"],
+  // },
   trailingSlash: true,
   reactStrictMode: false,
-
   staticPageGenerationTimeout: 5000,
   compiler: {
-    styledComponents: true,
+    minify: true,
     removeConsole: true,
   },
-
-  swcMinify: true,
-  experimental: {
-    images: {
-      optimized: true,
-      domains: ["cdn.ostello.co.in"],
-    },
-    // appDir: true,
-    granularChunks: true,
-  },
+  // granularChunks: true,
+  // experimental: {
+  //   images: {
+  //     optimized: true,
+  //     domains: ["cdn.ostello.co.in"],
+  //     loader: "custom",
+  //     loaderFile: "./my/image/loader.js",
+  //   },
+  // },
   async headers() {
     return [
       {
@@ -142,13 +145,7 @@ const nextConfig = {
   },
 };
 
-module.exports = nextConfig;
-
-// const withBundleAnalyzer = require("@next/bundle-analyzer")({
-//   enabled: process.env.ANALYZE === "true",
-// });
-
-// module.exports = withBundleAnalyzer({});
+module.exports = withPurgeCSSModules(nextConfig);
 
 function oldPageRedirectRules() {
   return inValidUrls.map((url) => {
@@ -491,7 +488,7 @@ const inValidUrls = [
 //   },
 // });
 
-const withBundleAnalyzer = require('@next/bundle-analyzer')({
-  enabled: process.env.ANALYZE === 'true',
+const withBundleAnalyzer = require("@next/bundle-analyzer")({
+  enabled: process.env.ANALYZE === "true",
 });
 module.exports = withBundleAnalyzer(nextConfig);
