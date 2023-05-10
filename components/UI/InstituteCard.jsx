@@ -161,7 +161,7 @@ export default function InstituteCard({
   //       toast.success("Successfully Added to whitelist !");
   //       setWishListed(true);
   //     } catch (err) {
-  //       
+  //
   //     } finally {
   //       dispatch(getUser());
   //     }
@@ -187,7 +187,7 @@ export default function InstituteCard({
   //       toast.success("Successfully Removed from whitelist !");
   //       setWishListed(false);
   //     } catch (err) {
-  //       
+  //
   //     } finally {
   //       dispatch(getUser());
   //     }
@@ -281,10 +281,8 @@ export default function InstituteCard({
                 )}`,
               },
             });
-            
           } catch (err) {
             // toast.error(err.message);
-            
           }
 
           checkSubscriber();
@@ -434,7 +432,6 @@ export default function InstituteCard({
 
       setNotified(true);
     } catch (err) {
-      
       toast.error(err.message);
     } finally {
       dispatch(getUser());
@@ -487,9 +484,7 @@ export default function InstituteCard({
               <Image
                 width={380}
                 height={380}
-                sizes="(max-width: 768px) 100vw,
-                (max-width: 1200px) 50vw,
-                33vw"
+                layout="intrinsic"
                 unoptimized
                 src={
                   imageKey

@@ -58,7 +58,7 @@ export default function MarketingDisplay() {
               <Image
                 width={380}
                 height={380}
-                sizes="100vw"
+                layout="intrinsic"
                 src={item.img.src}
                 className="w-full h-full min-w-[380px]  rounded-xl"
                 alt=""

@@ -27,9 +27,7 @@ export default function TwoColCard() {
         <Image
           width={380}
           height={380}
-          sizes="(max-width: 768px) 100vw,
-          (max-width: 1200px) 50vw,
-          33vw"
+          layout="intrinsic"
           src={mentorImageMobile.src}
           className="h-full w-full rounded-xl  block lg:hidden cursor-pointer"
           alt=""

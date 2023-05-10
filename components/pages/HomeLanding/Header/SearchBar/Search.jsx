@@ -72,7 +72,7 @@ function Search({
 
     const sortCourses = allData?.filter((items) => "classtype" in items);
 
-    console.log(sortInstitutes, sortCourses);
+
 
     const dataCourseSorting = sortCourses?.map((item, idx) => {
       const { id, name, ratings, images, slug, category } = item;
@@ -111,7 +111,6 @@ function Search({
       };
     });
 
-    console.log(dataCourseSorting, dataInstituteSorting, allData);
 
     const removeDuplicatesData = dataCourseSorting?.filter((element) => {
       let isDuplicate;
@@ -162,7 +161,7 @@ function Search({
     // setFilteredItems(searchData);
   }, [searchData, searchText]);
 
-  console.log(filteredItems, searchData, allData, "fahad");
+
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -189,7 +188,7 @@ function Search({
     }
   }, [searchText]);
 
-  console.log(searchText, "pushing codes");
+ 
 
   return (
     <form

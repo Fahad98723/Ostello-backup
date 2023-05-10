@@ -300,7 +300,7 @@ export default function InstituteSection({ time }) {
         ""
       )}
 
-      <div className=" mt-10 mx-auto  grid lg:grid-cols-2 xl:grid-cols-3 grid-cols-1 gap-[60px] ">
+      <div className=" mt-10 mx-auto  grid lg:grid-cols-2 xl:grid-cols-3 grid-cols-1 md:gap-[60px] gap-[20px]">
         {locationWay
           // ?.sort((a, b) => b?.images?.length - a?.images?.length)
           // ?.sort((a, b) => b?.reviews?.length - a?.reviews?.length)

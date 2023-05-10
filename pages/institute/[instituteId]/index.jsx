@@ -278,15 +278,15 @@ const NewInstitutePage = ({ currentInstitute, notFound, ip, review }) => {
             !currentInstitute?.images?.length ||
             !currentInstitute?.videos.length ? (
               <>
-                <a>Preparation For CUET + Boards</a>
-                <a
+                <p className="text-white">Preparation For CUET + Boards</p>
+                <p
                   onClick={() => {
                     router.push(`/entrance-exam/${currentInstitute?.id}`);
                   }}
                   className={`text-[16px] mx-3 border-2 border-white text-white p-2`}
                 >
                   Enroll Now
-                </a>
+                </p>
               </>
             ) : (
               <div>

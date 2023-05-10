@@ -16,9 +16,7 @@ export default function TwoRowCard() {
         <Image
           width={380}
           height={380}
-          sizes="(max-width: 768px) 100vw,
-          (max-width: 1200px) 50vw,
-          33vw"
+          layout="intrinsic"
           src={coachingImage.src}
           className="h-full w-full rounded-xl  cursor-pointer"
           alt=""
@@ -29,9 +27,7 @@ export default function TwoRowCard() {
         <Image
           width={380}
           height={380}
-          sizes="(max-width: 768px) 100vw,
-          (max-width: 1200px) 50vw,
-          33vw"
+          layout="intrinsic"
           src={coachingImageMobile.src}
           className="h-full w-full rounded-xl  cursor-pointer"
           alt=""

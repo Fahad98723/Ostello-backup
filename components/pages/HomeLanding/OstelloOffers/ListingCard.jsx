@@ -29,9 +29,7 @@ export default function ListingCard() {
           <Image
             width={250}
             height={250}
-            sizes="(max-width: 768px) 100vw,
-            (max-width: 1200px) 50vw,
-            33vw"
+            layout="intrinsic"
             src={schoolBoyModel.src}
             className="lg:w-full  w-[250px] h-[250px]"
             alt=" Avail the services now to grow with Ostello"
