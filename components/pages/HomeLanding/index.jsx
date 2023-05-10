@@ -4,61 +4,60 @@ import { setUserLocation } from "../../../redux/slices/UserAnalytics";
 import dynamic from "next/dynamic";
 import { setLocationQuery } from "../../../redux/slices/SearchSlice";
 const Schema = dynamic(
-
   () => {
     return import("../../Schema");
   },
-  { compatibleMode: true, on: ["visible"] }
+  { ssr: false }
 );
-const Header = lazyHydrate(
+const Header = dynamic(
   () => {
     return import("./Header");
   },
-  { compatibleMode: true, on: ["visible"] }
+  { ssr: false }
 );
-const Navbar = lazyHydrate(
+const Navbar = dynamic(
   () => {
     return import("./Header/Navbar");
   },
-  { compatibleMode: true, on: ["visible"] }
+  { ssr: false }
 );
-const Footer = lazyHydrate(
+const Footer = dynamic(
   () => {
     return import("../../layout/Footer");
   },
-  { compatibleMode: true, on: ["visible"] }
+  { ssr: false }
 );
-const InstituteSection = lazyHydrate(
+const InstituteSection = dynamic(
   () => {
     return import("./InstituteSection");
   },
-  { compatibleMode: true, on: ["visible"] }
+  { ssr: false }
 );
-const OstelloOffers = lazyHydrate(
+const OstelloOffers = dynamic(
   () => {
     return import("./OstelloOffers");
   },
-  { compatibleMode: true, on: ["visible"] }
+  { ssr: false }
 );
-const OstelloExplore = lazyHydrate(
+const OstelloExplore = dynamic(
   () => {
     return import("./OstelloExplore/OstelloExplore");
   },
-  { compatibleMode: true, on: ["visible"] }
+  { ssr: false }
 );
 
-const OstelloFAQ = lazyHydrate(
+const OstelloFAQ = dynamic(
   () => {
     return import("./OstelloFAQ");
   },
-  { compatibleMode: true, on: ["visible"] }
+  { ssr: false }
 );
 
-const DownloadApp = lazyHydrate(
+const DownloadApp = dynamic(
   () => {
     return import("../Mentor/DownloadApp");
   },
-  { compatibleMode: true, on: ["visible"] }
+  { ssr: false }
 );
 
 export default function HomeLanding() {
